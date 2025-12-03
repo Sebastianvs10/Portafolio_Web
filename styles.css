@@ -65,21 +65,22 @@ body {
     transform: scale(1.2);
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-    .navbar {
+@media (max-width: 600px) {
+    .navbar ul {
         flex-direction: column;
         gap: 10px;
     }
-
-    .navbar ul {
-        justify-content: center;
+    .navbar li {
+        margin: 5px 0;
     }
-
-    .nav-icons {
-        justify-content: center;
+    .navbar a {
+        font-size: 0.9rem;
+    }
+    .nav-icons i {
+        font-size: 1.2rem;
     }
 }
+
 
 
 /* Secciones full screen */
@@ -297,6 +298,7 @@ body {
     max-width: 1100px;
     margin: auto;
 }
+
 
 .section-habilidades {
     display: block;
@@ -762,20 +764,6 @@ body {
     }
 }
 
-/* Responsive para pantallas pequeñas */
-@media (max-width: 700px) {
-    .contact-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contact-info,
-    .contact-icons {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
 
 @keyframes pulse {
     0% {
@@ -829,29 +817,102 @@ body {
 }
 
 /* Responsive Inicio*/
-@media (max-width: 900px) {
-    .section-inicio h1 {
-        font-size: 2rem;
+@media (max-width: 600px) {
+    .inicio-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px;
     }
 
-    .section-inicio p {
+    .inicio-img {
+        width: 250px;
+        height: 350px;
+    }
+
+    .inicio-texto h1 {
+        font-size: 1.8rem;
+    }
+
+    .inicio-texto p {
         font-size: 1rem;
     }
 }
 
+
 /* Responsive Sobre mi*/
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     .section-sobre .container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 20px;
     }
 
     .profile-img {
-        width: 400px;
-        height: 500px;
+        width: 250px;
+        height: 300px;
     }
 
-    .text {
+    .text p {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .categorias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skill-card {
+        min-height: 140px;
+        padding: 15px;
+    }
+
+    .skill-card img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        height: 250px;
+        padding: 10px;
+    }
+
+    .section-proyectos h2 {
+        font-size: 1.8rem;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
         text-align: center;
+    }
+
+    .contact-info, .contact-map {
+        max-width: 100%;
+    }
+
+    .contact-map iframe {
+        height: 250px;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 0.8rem;
+        padding: 15px 10px;
     }
 }
