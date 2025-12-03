@@ -17,6 +17,7 @@ body {
     justify-content: space-between;
     /* Menú a la izquierda / centro + iconos a la derecha */
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /* UL centrado como lo tenías */
@@ -75,8 +76,11 @@ body {
     .navbar a {
         font-size: 0.9rem;
     }
+    .nav-icons {
+        gap: 10px; /* reduce el espacio entre iconos */
+    }
     .nav-icons i {
-        font-size: 1.2rem;
+        font-size: 1rem; /* tamaño de icono más adecuado para móviles */
     }
 }
 
