@@ -70,18 +70,24 @@ body {
     .navbar ul {
         gap: 10px;
     }
+
     .navbar li {
         margin: 5px 0;
     }
+
     .navbar a {
         font-size: 0.9rem;
     }
+
     .nav-icons {
-        gap: 10px; /* reduce el espacio entre iconos */
+        gap: 10px;
+        /* reduce el espacio entre iconos */
         align-items: center;
     }
+
     .nav-icons i {
-        font-size: 1rem; /* tamaño de icono más adecuado para móviles */
+        font-size: 1rem;
+        /* tamaño de icono más adecuado para móviles */
     }
 }
 
@@ -861,6 +867,7 @@ body {
         font-size: 0.95rem;
     }
 }
+
 @media (max-width: 600px) {
     .skills-grid {
         grid-template-columns: 1fr;
@@ -919,13 +926,15 @@ body {
     /* Mantener carrusel horizontal */
     .carousel {
         display: flex;
-        flex-direction: row; /* IMPORTANTE: no apilar */
+        flex-direction: row;
+        /* IMPORTANTE: no apilar */
         width: 100%;
     }
 
     /* Contenedor del carrusel */
     .carousel-container {
-        overflow: hidden; /* mantiene un solo slide visible */
+        overflow: hidden;
+        /* mantiene un solo slide visible */
         width: 100%;
     }
 
@@ -939,24 +948,38 @@ body {
 
 
 @media (max-width: 600px) {
+
     .contact-container {
+        display: flex;
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        width: 100%;
+        overflow: hidden;
+        /* evita desbordes */
     }
 
-    .contact-info, .contact-map {
+    .contact-info,
+    .contact-map {
+        width: 100%;
         max-width: 100%;
     }
 
     .contact-map iframe {
+        width: 100% !important;
+        /* fuerza adaptación */
         height: 250px;
+        border: 0;
+        display: block;
+        /* evita espacios raros */
     }
 
     .contact-title {
         font-size: 2rem;
+        text-align: center;
     }
 }
+
 @media (max-width: 600px) {
     .site-footer {
         font-size: 0.8rem;
