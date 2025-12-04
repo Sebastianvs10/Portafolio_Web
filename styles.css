@@ -78,6 +78,7 @@ body {
     }
     .nav-icons {
         gap: 10px; /* reduce el espacio entre iconos */
+        align-items: center;
     }
     .nav-icons i {
         font-size: 1rem; /* tamaño de icono más adecuado para móviles */
@@ -885,11 +886,11 @@ body {
 /* ====== Responsive para sección Proyectos ====== */
 @media (max-width: 600px) {
 
-    /* Ajusta altura de cada slide y padding interno */
+    /* Mantener tamaño adecuado del slide */
     .slide {
-        height: auto; /* permite que crezca según el contenido */
-        padding: 15px 10px;
-        text-align: center; /* centra títulos y textos */
+        height: auto;
+        padding: 20px 15px;
+        text-align: center;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -897,43 +898,44 @@ body {
         justify-content: center;
     }
 
-    /* Ajusta títulos */
+    /* Título principal arriba */
     .section-proyectos h2 {
         font-size: 1.6rem;
-        margin: 0 auto 20px auto; /* centrado y espacio abajo */
+        margin-bottom: 20px;
         text-align: center;
     }
 
-    /* Ajusta títulos de cada slide */
+    /* Ajuste de textos */
     .slide h3 {
         font-size: 1.2rem;
         margin-bottom: 10px;
     }
 
-    /* Ajusta párrafos dentro de slides */
     .slide p {
         font-size: 0.9rem;
         line-height: 1.3;
-        margin: 5px 0;
     }
 
-    /* Botones del carrusel */
-    .btn {
-        font-size: 1.5rem; /* más pequeño en móviles */
-        padding: 5px 10px;
+    /* Mantener carrusel horizontal */
+    .carousel {
+        display: flex;
+        flex-direction: row; /* IMPORTANTE: no apilar */
+        width: 100%;
     }
 
     /* Contenedor del carrusel */
     .carousel-container {
-        max-width: 100%;
-        overflow-x: hidden;
+        overflow: hidden; /* mantiene un solo slide visible */
+        width: 100%;
     }
 
-    /* Evita que el carrusel se desborde */
-    .carousel {
-        flex-direction: column; /* opcional: apila slides si quieres que no haga scroll horizontal */
+    /* Botones del carrusel más pequeños */
+    .btn {
+        font-size: 1.5rem;
+        padding: 5px 10px;
     }
 }
+
 
 
 @media (max-width: 600px) {
