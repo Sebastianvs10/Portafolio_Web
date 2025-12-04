@@ -967,11 +967,16 @@ body {
 
     .contact-map iframe {
         width: 100% !important;
+        max-width: 100% !important;
         /* fuerza adaptación */
         height: 250px;
         border: 0;
         display: block;
         /* evita espacios raros */
+    }
+    
+    .section-contacto {
+        overflow: hidden; /* capa de seguridad */
     }
 
     .contact-title {
