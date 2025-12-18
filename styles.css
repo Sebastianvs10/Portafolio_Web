@@ -9,7 +9,7 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    height: 50px;
+    height: 40px;
     background: #000000;
     padding: 10px 30px;
     z-index: 1000;
@@ -142,6 +142,26 @@ body {
     opacity: 0;
     transform: translateY(50px);
     animation-fill-mode: forwards;
+}
+.btn-cv {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background-color: #e63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cv i {
+  margin-right: 8px;
+}
+
+.btn-cv:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
 }
 
 /* Animación de entrada con delay */
