@@ -1619,14 +1619,19 @@ ul  { list-style: none; }
   .langs-wrapper    { padding: 20px; }
   .lang-card        { min-width: 100%; flex-wrap: nowrap; }
 
-  /* Timeline — ocultar columna año, queda el periodo dentro de la card */
-  .timeline         { padding-left: 6px; }
-  .timeline-item    { grid-template-columns: 0px 24px 1fr; gap: 0 12px; }
+  /* Timeline — layout flex en móvil, columna año oculta */
+  .timeline         { padding-left: 0; }
+  .timeline-item    { display: flex; gap: 0; }
   .timeline-side    { display: none; }
-  .timeline-card    { padding: 18px; }
+  .timeline-marker  { width: 28px; flex-shrink: 0; margin-right: 14px; }
+  .timeline-dot     { width: 12px; height: 12px; margin-top: 22px; }
+  .timeline-line    { margin-left: auto; margin-right: auto; }
+  .timeline-card    { flex: 1; min-width: 0; padding: 16px 18px; }
   .timeline-card-header { flex-direction: column; gap: 8px; align-items: flex-start; }
-  .timeline-period  { align-self: flex-start; }
-  .tech-tags        { gap: 6px; }
+  .timeline-period  { align-self: flex-start; white-space: normal; text-align: left; }
+  .timeline-role    { font-size: 0.97rem; }
+  .timeline-desc    { font-size: 0.86rem; margin-bottom: 14px; }
+  .tech-tags        { gap: 5px; }
   .tech-tags span   { font-size: 0.7rem; padding: 3px 9px; }
 
   /* Contact */
@@ -1684,11 +1689,12 @@ ul  { list-style: none; }
   .lang-level-label { font-size: 0.7rem; }
 
   /* Timeline */
-  .timeline-role    { font-size: 0.92rem; }
-  .timeline-company { font-size: 0.8rem; }
-  .timeline-desc    { font-size: 0.84rem; }
-  .timeline-period  { font-size: 0.7rem; }
-  .timeline-dot     { width: 12px; height: 12px; margin-top: 24px; }
+  .timeline-role    { font-size: 0.88rem; }
+  .timeline-company { font-size: 0.78rem; }
+  .timeline-desc    { font-size: 0.82rem; }
+  .timeline-period  { font-size: 0.68rem; }
+  .timeline-marker  { width: 22px; margin-right: 10px; }
+  .timeline-dot     { width: 10px; height: 10px; margin-top: 20px; }
 
   /* Contact */
   .contact-card-value { font-size: 0.76rem; }
@@ -1706,5 +1712,7 @@ ul  { list-style: none; }
   .footer-copy   { font-size: 0.65rem; }
   .edu-card      { padding: 16px; }
   .langs-wrapper { padding: 16px; }
-  .timeline-card { padding: 14px; }
+  .timeline-card { padding: 12px 14px; }
+  .timeline-marker { width: 18px; margin-right: 8px; }
+  .timeline-dot  { width: 9px; height: 9px; }
 }
