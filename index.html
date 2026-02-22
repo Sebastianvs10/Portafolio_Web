@@ -4,333 +4,601 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhohan Sebastian Vargas Salinas</title>
+  <title>Jhohan Sebastian · Desarrollador Full Stack</title>
+  <meta name="description" content="Portafolio profesional de Jhohan Sebastian Vargas Salinas – Ingeniero Electrónico y Desarrollador Full Stack.">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
 <body>
-  <!-- ===== BARRA DE NAVEGACIÓN ===== -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#inicio" class="active">Inicio</a></li>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#inicio" class="nav-logo">JS<span class="nav-logo-dot">.</span></a>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
       <li><a href="#sobre-mi">Perfil</a></li>
+      <li><a href="#educacion">Educación</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#proyectos">Experiencia</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
 
-    <!-- ICONOS DE CONTACTO EN LA BARRA -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo claro">
+      <i class="fas fa-sun" id="theme-icon"></i>
+    </button>
+
     <div class="nav-icons">
-      <a href="mailto:jsebastian.vs96@gmail.com" title="Correo">
+      <a href="mailto:jsebastian.vs96@gmail.com" title="Correo" aria-label="Correo">
         <i class="fas fa-envelope"></i>
       </a>
-      <a href="https://www.linkedin.com/in/jhohan-sebastián-vargas-salinas-8a3a2a1b3" target="_blank" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/jhohan-sebastián-vargas-salinas-8a3a2a1b3" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/Sebastianvs10" target="_blank" title="GitHub">
+      <a href="https://github.com/Sebastianvs10" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://wa.me/+573184273263" target="_blank" title="WhatsApp">
+      <a href="https://wa.me/+573184273263" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
       </a>
-
     </div>
   </nav>
 
-  <!-- ===== SECCIONES ===== -->
-  <section id="inicio" class="section section-inicio">
+  <!-- ===== HERO ===== -->
+  <section id="inicio" class="section-inicio">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+
     <div class="inicio-container">
-      <!-- Columna izquierda: imagen -->
-      <div class="inicio-img-container">
-        <img src="assets/image2.png" alt="Foto de Jhohan" class="inicio-img" />
-      </div>
-
-      <!-- Columna derecha: saludo -->
-      <div class="inicio-texto">
-        <h1>Hola, soy Jhohan Sebastian Vargas Salinas</h1>
-        <p>
-          Ingeniero Electrónico y Telecomunicaciones | Desarrollador Full
-          Stack
-        </p>
-        <a href="assets/cv/Hoja-de-Vida-Jhohan-Sebastian.pdf" download="Jhohan_Sebastian_Vargas_CV.pdf" class="btn-cv">
-        <i class="fas fa-file-pdf"></i> Descargar Hoja de Vida
-      </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre-mi" class="section section-sobre">
-    <div class="container">
-      <!-- Imagen -->
-      <img src="assets/image1.png" alt="Foto Profesional" class="profile-img" />
-
       <!-- Texto -->
-      <div class="text">
-        <div class="contact-title-wrapper">
-          <h2 class="contact-title">Perfil profesional</h2>
+      <div class="inicio-texto">
+        <div class="hero-available">
+          <span class="available-dot"></span>
+          Disponible para nuevas oportunidades
         </div>
+        <span class="hero-greeting">Hola, soy</span>
+        <h1 class="hero-name">
+          Jhohan Sebastian<br>
+          <span class="hero-name-gradient">Vargas Salinas</span>
+        </h1>
+        <p class="hero-role">
+          <span class="typing-prefix">—</span>
+          <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          Transformo ideas en soluciones digitales robustas y escalables, con
+          enfoque en calidad, rendimiento y experiencia del usuario.
+        </p>
+        <div class="hero-actions">
+          <a href="assets/cv/Hoja-de-Vida-Jhohan-Sebastian.pdf"
+            download="Jhohan_Sebastian_Vargas_CV.pdf"
+            class="btn-primary">
+            <i class="fas fa-file-pdf"></i> Descargar CV
+          </a>
+          <a href="#proyectos" class="btn-outline">
+            Ver Experiencia <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="inicio-img-wrapper">
+        <div class="img-frame">
+          <img src="assets/image2.png" alt="Jhohan Sebastian Vargas" class="inicio-img" />
+        </div>
+        <div class="img-badge img-badge-1"><i class="fab fa-react"></i> React</div>
+        <div class="img-badge img-badge-2"><i class="fab fa-python"></i> Python</div>
+        <div class="img-badge img-badge-3"><i class="fas fa-database"></i> SQL</div>
+      </div>
+    </div>
+
+    <a href="#sobre-mi" class="scroll-indicator" aria-label="Ir a la siguiente sección">
+      <div class="scroll-dot"></div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ===== SOBRE MÍ (with stars) ===== -->
+  <section id="sobre-mi" class="section-sobre">
+    <div class="about-container">
+      <!-- Imagen -->
+      <div class="about-img-wrapper reveal-left">
+        <div class="about-img-frame">
+          <img src="assets/image1.png" alt="Foto Profesional Jhohan" class="profile-img" />
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <div class="about-content reveal-right">
+        <span class="section-tag">Sobre Mí</span>
+        <h2 class="section-title section-title--dark">Perfil Profesional</h2>
         <p>
-          Profesional en Ingeniería Electrónica y Telecomunicaciones de la
-          <strong>Universidad del Cauca</strong>, con una sólida formación
+          Profesional en <strong>Ingeniería Electrónica y Telecomunicaciones</strong>
+          de la <strong>Universidad del Cauca</strong>, con sólida formación
           teórico–práctica complementada con programas de capacitación en
-          plataformas de <strong>formación virtual</strong>. Cuento con
-          experiencia en programación, mantenimiento, administración y gestión
-          de sistemas telemáticos, así como en el desarrollo de soluciones
-          basadas en software.
+          plataformas de formación virtual.
         </p>
         <p>
-          Estoy preparado para asumir responsabilidades en la planificación,
-          organización, ejecución y control de proyectos tecnológicos,
-          aportando soluciones eficientes y orientadas a resultados. Me
-          caracterizo por mi compromiso, responsabilidad y ética profesional,
-          además de una actitud proactiva y facilidad para adaptarme a
-          diferentes tareas y entornos laborales.
+          Cuento con experiencia en programación, mantenimiento, administración y gestión
+          de sistemas telemáticos, así como en el desarrollo de soluciones basadas
+          en software. Preparado para liderar proyectos tecnológicos aportando
+          soluciones eficientes y orientadas a resultados.
         </p>
         <p>
-          Cuento con orientación al servicio, habilidades para el trabajo en
-          equipo y una mentalidad enfocada en el aprendizaje continuo. Pongo a
-          disposición mis conocimientos, experiencia y dedicación para
-          contribuir al logro de los objetivos institucionales y al
-          crecimiento de la organización, aportando valor y mejoras en cada
-          proceso asignado.
+          Me caracterizo por mi compromiso, responsabilidad y ética profesional,
+          con una actitud proactiva, orientación al servicio y mentalidad enfocada
+          en el aprendizaje continuo.
         </p>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="8">0</span><span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Proyectos realizados</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Tecnologías</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="habilidades" class="section section-habilidades">
-    <div class="contact-title-wrapper">
-      <h2 class="contact-title">Habilidades Tecnológicas</h2>
+  <!-- ===== EDUCACIÓN ===== -->
+  <section id="educacion" class="section-educacion">
+    <div class="section-header reveal">
+      <span class="section-tag">Formación Académica</span>
+      <h2 class="section-title">Educación</h2>
     </div>
+
+    <div class="edu-container">
+
+      <!-- Tarjeta Universidad -->
+      <div class="edu-card reveal">
+        <div class="edu-card-icon-wrap">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="edu-card-body">
+          <div class="edu-card-header">
+            <div>
+              <h3 class="edu-degree">Ingeniería Electrónica y Telecomunicaciones</h3>
+              <p class="edu-institution"><i class="fas fa-university"></i> Universidad del Cauca</p>
+            </div>
+            <span class="edu-year-badge">2025</span>
+          </div>
+          <p class="edu-desc">
+            Formación integral en sistemas telemáticos, redes de comunicaciones,
+            electrónica digital, programación de sistemas embebidos y desarrollo
+            de software, con enfoque en proyectos tecnológicos aplicados e innovación.
+          </p>
+          <div class="edu-meta-tags">
+            <span><i class="fas fa-map-marker-alt"></i> Popayán, Cauca</span>
+            <span><i class="fas fa-calendar-check"></i> Graduado 2025</span>
+            <span><i class="fas fa-medal"></i> Título Profesional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="langs-wrapper reveal">
+        <h3 class="langs-title"><i class="fas fa-language"></i> Idiomas</h3>
+        <div class="langs-row">
+          <div class="lang-card">
+            <span class="lang-flag">🇨🇴</span>
+            <div class="lang-info">
+              <span class="lang-name">Español</span>
+              <span class="lang-level-label">Nativo / C2</span>
+            </div>
+            <div class="lang-dots">
+              <span class="ldot ldot--on"></span>
+              <span class="ldot ldot--on"></span>
+              <span class="ldot ldot--on"></span>
+              <span class="ldot ldot--on"></span>
+              <span class="ldot ldot--on"></span>
+            </div>
+          </div>
+          <div class="lang-card">
+            <span class="lang-flag">🇺🇸</span>
+            <div class="lang-info">
+              <span class="lang-name">Inglés</span>
+              <span class="lang-level-label">Básico / A2</span>
+            </div>
+            <div class="lang-dots">
+              <span class="ldot ldot--on"></span>
+              <span class="ldot ldot--on"></span>
+              <span class="ldot"></span>
+              <span class="ldot"></span>
+              <span class="ldot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HABILIDADES ===== -->
+  <section id="habilidades" class="section-habilidades">
+    <div class="section-header reveal">
+      <span class="section-tag">Stack Tecnológico</span>
+      <h2 class="section-title">Habilidades Tecnológicas</h2>
+    </div>
+
     <div class="categorias-grid">
+
       <!-- FRONTEND -->
-      <div class="categoria">
-        <h3 class="skill-category">Frontend</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <i class="fas fa-laptop-code categoria-icon"></i>
+          <h3 class="skill-category">Frontend</h3>
+        </div>
         <div class="skills-column">
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-            <span>HTML5 <br />
-              <strong>Avanzado</strong></span>
-            <div class="progress-bar">
-              <div class="level-advanced" style="--w: 90%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <div class="skill-info">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-level level-advanced">Avanzado</span>
             </div>
+            <div class="progress-bar"><div class="level-advanced" style="--w: 90%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-            <span>CSS3 <br />
-              <strong>Avanzado</strong></span>
-            <div class="progress-bar">
-              <div class="level-advanced" style="--w: 85%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <div class="skill-info">
+              <span class="skill-name">CSS3</span>
+              <span class="skill-level level-advanced">Avanzado</span>
             </div>
+            <div class="progress-bar"><div class="level-advanced" style="--w: 85%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-            <span>JavaScript <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 75%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 75%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-            <span>React <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 70%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <div class="skill-info">
+              <span class="skill-name">React JS</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 70%"></div></div>
           </div>
         </div>
       </div>
 
       <!-- BACKEND -->
-      <div class="categoria">
-        <h3 class="skill-category">Backend</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <i class="fas fa-server categoria-icon"></i>
+          <h3 class="skill-category">Backend</h3>
+        </div>
         <div class="skills-column">
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-            <span>Java <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 80%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+            <div class="skill-info">
+              <span class="skill-name">Java</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 80%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-            <span>Python <br />
-              <strong>Avanzado</strong></span>
-            <div class="progress-bar">
-              <div class="level-advanced" style="--w: 88%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <div class="skill-info">
+              <span class="skill-name">Python</span>
+              <span class="skill-level level-advanced">Avanzado</span>
             </div>
+            <div class="progress-bar"><div class="level-advanced" style="--w: 88%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" />
-            <span>Django <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 70%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
+            <div class="skill-info">
+              <span class="skill-name">Django</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 70%"></div></div>
           </div>
         </div>
       </div>
 
       <!-- BASES DE DATOS -->
-      <div class="categoria">
-        <h3 class="skill-category">Bases de Datos</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <i class="fas fa-database categoria-icon"></i>
+          <h3 class="skill-category">Bases de Datos</h3>
+        </div>
         <div class="skills-column">
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
-            <span>PostgreSQL <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 75%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+            <div class="skill-info">
+              <span class="skill-name">PostgreSQL</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 75%"></div></div>
           </div>
-
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
-            <span>MySQL <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 70%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+            <div class="skill-info">
+              <span class="skill-name">MySQL</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 70%"></div></div>
           </div>
-
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />
-            <span>MongoDB <br />
-              <strong>Básico</strong></span>
-            <div class="progress-bar">
-              <div class="level-basic" style="--w: 60%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+            <div class="skill-info">
+              <span class="skill-name">MongoDB</span>
+              <span class="skill-level level-basic">Básico</span>
             </div>
+            <div class="progress-bar"><div class="level-basic" style="--w: 60%"></div></div>
           </div>
         </div>
       </div>
 
       <!-- DEVOPS -->
-      <div class="categoria">
-        <h3 class="skill-category">DevOps</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <i class="fas fa-code-branch categoria-icon"></i>
+          <h3 class="skill-category">DevOps</h3>
+        </div>
         <div class="skills-column">
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-            <span>Git <br />
-              <strong>Avanzado</strong></span>
-            <div class="progress-bar">
-              <div class="level-advanced" style="--w: 85%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+            <div class="skill-info">
+              <span class="skill-name">Git</span>
+              <span class="skill-level level-advanced">Avanzado</span>
             </div>
+            <div class="progress-bar"><div class="level-advanced" style="--w: 85%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
-            <span>Docker <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 65%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+            <div class="skill-info">
+              <span class="skill-name">Docker</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 65%"></div></div>
           </div>
-          <div class="skill-card reveal">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
-            <span>Linux <br />
-              <strong>Intermedio</strong></span>
-            <div class="progress-bar">
-              <div class="level-intermediate" style="--w: 78%"></div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+            <div class="skill-info">
+              <span class="skill-name">Linux</span>
+              <span class="skill-level level-intermediate">Intermedio</span>
             </div>
+            <div class="progress-bar"><div class="level-intermediate" style="--w: 78%"></div></div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <section id="proyectos" class="section section-proyectos">
-    <div class="contact-title-wrapper">
-      <h2 class="contact-title">Experiencia Laboral</h2>
+  <!-- ===== EXPERIENCIA — TIMELINE ===== -->
+  <section id="proyectos" class="section-proyectos">
+    <div class="section-header reveal">
+      <span class="section-tag">Trayectoria</span>
+      <h2 class="section-title">Experiencia Laboral</h2>
     </div>
 
-    <div class="carousel-container">
-      <div class="carousel">
-        <!-- Proyecto 1: GrandTek S.A.S (2022) -->
-        <div class="slide slide-1" style="
-              background: url('img/grandtek-2022.jpg') no-repeat center/cover;
-            ">
-          <h3>GrandTek S.A.S - Desarrollador FullStack</h3>
-          <p><strong>Periodo:</strong> Mayo 2022 - Noviembre 2022</p>
-          <p>
-            <strong>Tecnologías:</strong> Java, Spring Boot, Microservicios,
-            JavaScript, PostgreSQL, MongoDB, Azure
-          </p>
-          <p>
-            <strong>Logro:</strong> Implementación exitosa de microservicios
-            de facturación electrónica, bien recibida por el cliente.
-          </p>
-        </div>
+    <div class="timeline">
 
-        <!-- Proyecto 2: Horisoft S.A.S (2023) -->
-        <div class="slide slide-2" style="
-              background: url('img/horisoft-2023.jpg') no-repeat center/cover;
-            ">
-          <h3>Horisoft S.A.S - Desarrollador Web FullStack</h3>
-          <p><strong>Periodo:</strong> Febrero 2023 - Julio 2023</p>
-          <p>
-            <strong>Tecnologías:</strong> Java, Spring Boot, Angular, Docker,
-            PostgreSQL
-          </p>
-          <p>
-            <strong>Logro:</strong> Desarrollo de aplicativo web sistemático
-            para empresa del sector salud.
-          </p>
+      <!-- Ítem 1 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-side">
+          <span class="timeline-year">2022</span>
         </div>
-
-        <!-- Proyecto 3: GrandTek S.A.S (2024-2025) -->
-        <div class="slide slide-3" style="
-              background: url('img/grandtek-2024.jpg') no-repeat center/cover;
-            ">
-          <h3>GrandTek S.A.S - Ingeniero de Requisitos / Front-End</h3>
-          <p><strong>Periodo:</strong> Julio 2023 - Mayo 2025</p>
-          <p>
-            <strong>Tecnologías:</strong> React JS, HTML5, CSS3, PostgreSQL
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <h3 class="timeline-role">Desarrollador FullStack</h3>
+              <p class="timeline-company"><i class="fas fa-building"></i> GrandTek S.A.S</p>
+            </div>
+            <span class="timeline-period">May 2022 – Nov 2022</span>
+          </div>
+          <p class="timeline-desc">
+            Implementación exitosa de microservicios de facturación electrónica para
+            clientes del sector empresarial, con alta satisfacción del cliente final.
           </p>
-          <p>
-            <strong>Logros:</strong> Levantamiento de requisitos exitoso y
-            desarrollo de sistemas telemáticos bien recibidos por el cliente.
-          </p>
+          <div class="tech-tags">
+            <span>Java</span><span>Spring Boot</span><span>Microservicios</span>
+            <span>JavaScript</span><span>PostgreSQL</span><span>MongoDB</span><span>Azure</span>
+          </div>
         </div>
       </div>
 
-      <button class="btn prev">❮</button>
-      <button class="btn next">❯</button>
+      <!-- Ítem 2 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-side">
+          <span class="timeline-year">2023</span>
+        </div>
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <h3 class="timeline-role">Desarrollador Web FullStack</h3>
+              <p class="timeline-company"><i class="fas fa-building"></i> Horisoft S.A.S</p>
+            </div>
+            <span class="timeline-period">Feb 2023 – Jul 2023</span>
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de aplicativo web sistemático para empresa del sector salud,
+            cubriendo desde el diseño de arquitectura hasta la implementación y pruebas.
+          </p>
+          <div class="tech-tags">
+            <span>Java</span><span>Spring Boot</span><span>Angular</span>
+            <span>Docker</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 3 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-side">
+          <span class="timeline-year">2023–2025</span>
+        </div>
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <h3 class="timeline-role">Ingeniero de Requisitos / Front-End</h3>
+              <p class="timeline-company"><i class="fas fa-building"></i> GrandTek S.A.S</p>
+            </div>
+            <span class="timeline-period">Jul 2023 – May 2025</span>
+          </div>
+          <p class="timeline-desc">
+            Levantamiento de requisitos exitoso y desarrollo del módulo frontend de
+            plataformas telemáticas bien recibidas por el cliente, liderando el ciclo
+            completo de análisis y desarrollo de interfaces.
+          </p>
+          <div class="tech-tags">
+            <span>React JS</span><span>HTML5</span><span>CSS3</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ítem 4 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-side">
+          <span class="timeline-year">2026</span>
+        </div>
+        <div class="timeline-marker">
+          <div class="timeline-dot dot-gold dot-pulse"></div>
+        </div>
+        <div class="timeline-card timeline-card--featured">
+          <div class="timeline-card-header">
+            <div>
+              <h3 class="timeline-role">Desarrollador FullStack</h3>
+              <p class="timeline-company"><i class="fas fa-building"></i> Sphaira</p>
+            </div>
+            <span class="timeline-period">2026 – Presente</span>
+          </div>
+          <p class="timeline-desc">
+            Desarrollo de soluciones Full Stack en Sphaira, participando en el diseño,
+            implementación y mantenimiento de plataformas digitales con enfoque en
+            rendimiento, escalabilidad y calidad del software.
+          </p>
+          <div class="tech-tags">
+            <span>Angular</span><span>Spring Boot</span><span>Java</span><span>Flutter</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="section-contacto">
-    <div class="contact-title-wrapper">
-      <h2 class="contact-title">Contacto</h2>
+    <div class="section-header reveal">
+      <span class="section-tag">¿Hablamos?</span>
+      <h2 class="section-title">Contacto</h2>
     </div>
 
-    <!-- CONTENEDOR DE DOS COLUMNAS -->
     <div class="contact-container">
-      <!-- Columna Izquierda -->
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> jsebastian.vs96@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +57 318 427 3263</p>
-        <p><i class="fas fa-map-marker-alt"></i> Oporapa, Huila - Colombia</p>
+      <!-- Tarjetas de contacto -->
+      <div class="contact-info reveal-left">
+        <a href="mailto:jsebastian.vs96@gmail.com" class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-card-text">
+            <span class="contact-card-label">Correo Electrónico</span>
+            <span class="contact-card-value">jsebastian.vs96@gmail.com</span>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <a href="tel:+573184273263" class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-card-text">
+            <span class="contact-card-label">Teléfono</span>
+            <span class="contact-card-value">+57 318 427 3263</span>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <a href="https://wa.me/+573184273263" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon contact-card-icon--green"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-card-text">
+            <span class="contact-card-label">WhatsApp</span>
+            <span class="contact-card-value">+57 318 427 3263</span>
+          </div>
+          <i class="fas fa-arrow-right contact-card-arrow"></i>
+        </a>
+
+        <div class="contact-card no-hover">
+          <div class="contact-card-icon contact-card-icon--gold"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-card-text">
+            <span class="contact-card-label">Ubicación</span>
+            <span class="contact-card-value">Oporapa, Huila — Colombia</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Columna Derecha: Mapa -->
-      <div class="contact-map">
+      <!-- Mapa -->
+      <div class="contact-map reveal-right">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0030000000002!2d-76.0001138!3d2.0259223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2426dfe1bd8d0f%3A0x8c7c30b212ad4d82!2sOporapa%2C%20Huila!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación en el mapa">
         </iframe>
       </div>
     </div>
   </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <p>
-      © 2025 Jhohan Sebastian Vargas Salinas. Todos los derechos reservados.
-    </p>
+    <div class="footer-inner">
+      <a href="#inicio" class="footer-logo">JS<span>.</span></a>
+      <div class="footer-social">
+        <a href="mailto:jsebastian.vs96@gmail.com" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/jhohan-sebastián-vargas-salinas-8a3a2a1b3" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Sebastianvs10" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/+573184273263" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="footer-copy">© 2025 Jhohan Sebastian Vargas Salinas · Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="script.js"></script>
 </body>
