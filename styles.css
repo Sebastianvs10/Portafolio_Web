@@ -1185,6 +1185,7 @@ ul  { list-style: none; }
   color: var(--green);
   letter-spacing: 0.04em;
   margin-bottom: 28px;
+  margin-inline: 0;
   opacity: 0;
   animation: fadeUp 0.8s ease-out 0.1s forwards;
 }
@@ -1500,100 +1501,188 @@ ul  { list-style: none; }
 [data-theme="light"] .edu-meta-tags span { background: rgba(0,0,0,0.03); }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE  — Mobile-first corrections
    ============================================================ */
 
-/* ---- 1024px ---- */
+/* ---- 1024px — Tablet landscape ---- */
 @media (max-width: 1024px) {
-  .categorias-grid { grid-template-columns: repeat(2, 1fr); }
+  .categorias-grid  { grid-template-columns: repeat(2, 1fr); }
   .inicio-container { gap: 50px; }
+  .timeline-item    { grid-template-columns: 90px 28px 1fr; }
 }
 
-/* ---- 900px ---- */
+/* ---- 900px — Tablet portrait ---- */
 @media (max-width: 900px) {
   :root { --pad-section: 90px 32px; }
 
+  /* Hero */
+  .section-inicio { padding: 110px 32px 70px; }
   .inicio-container {
     flex-direction: column-reverse;
-    gap: 44px;
+    gap: 40px;
     text-align: center;
   }
-  .hero-desc   { margin-inline: auto; }
-  .hero-actions { justify-content: center; }
+  .hero-available  { margin-inline: auto; }
+  .hero-desc       { margin-inline: auto; }
+  .hero-actions    { justify-content: center; }
 
+  /* About */
   .about-container {
     flex-direction: column;
-    gap: 44px;
+    gap: 40px;
     align-items: center;
     text-align: center;
   }
-  .stats-row   { justify-content: center; }
+  .stats-row       { justify-content: center; }
   .about-content p { max-width: 560px; margin-inline: auto; }
 
-  .timeline-item { grid-template-columns: 80px 28px 1fr; gap: 0 14px; }
+  /* Timeline */
+  .timeline-item   { grid-template-columns: 80px 26px 1fr; gap: 0 12px; }
 
+  /* Contact */
   .contact-container { flex-direction: column; }
 
-  .img-badge   { display: none; }
-  .footer-inner{ justify-content: center; text-align: center; }
+  /* Misc */
+  .img-badge        { display: none; }
+  .footer-inner     { justify-content: center; text-align: center; }
 }
 
-/* ---- 768px ---- */
+/* ---- 768px — Mobile navbar ---- */
 @media (max-width: 768px) {
-  .navbar { padding: 0 20px; }
+  .navbar { padding: 0 18px; gap: 12px; }
 
+  /* Ocultar iconos sociales: ya están en el footer */
+  .nav-icons { display: none; }
+
+  /* Menú hamburguesa desplegable */
   .nav-links {
     display: none;
     position: fixed;
     top: 68px; left: 0; right: 0;
-    background: rgba(5, 9, 20, 0.96);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(5, 9, 20, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
-    padding: 16px;
+    padding: 12px;
     gap: 4px;
     border-bottom: 1px solid var(--card-border);
     z-index: 999;
+    box-shadow: var(--shadow-lg);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 12px 16px; text-align: center; border-radius: var(--r-md); }
+  .nav-links li   { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 13px 16px;
+    text-align: center;
+    border-radius: var(--r-md);
+    font-size: 0.95rem;
+  }
 
   .hamburger { display: flex; }
-
-  .nav-icons a { width: 34px; height: 34px; }
+  [data-theme="light"] .nav-links { background: rgba(255,255,255,0.97); }
 }
 
-/* ---- 600px ---- */
+/* ---- 600px — Mobile phones ---- */
 @media (max-width: 600px) {
-  :root { --pad-section: 70px 20px; }
+  :root { --pad-section: 70px 18px; }
 
-  .edu-card { flex-direction: column; gap: 18px; padding: 22px; }
-  .edu-card-header { flex-direction: column; gap: 10px; }
-  .langs-wrapper { padding: 22px; }
-  .lang-card { min-width: 100%; }
-  .back-to-top { bottom: 20px; right: 20px; }
+  /* Hero */
+  .section-inicio  { padding: 90px 18px 56px; }
+  .img-frame       { width: 230px; height: 290px; }
+  .hero-name       { letter-spacing: -0.025em; }
+  .hero-actions    {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-primary,
+  .btn-outline     { width: 100%; max-width: 300px; justify-content: center; }
 
-  .categorias-grid { grid-template-columns: 1fr; }
-
-  .img-frame        { width: 270px; height: 340px; }
-  .about-img-frame  { width: 280px; height: 360px; }
+  /* About */
+  .about-img-frame         { width: 250px; height: 310px; }
   .about-img-frame::before { display: none; }
+  .stats-row               { gap: 24px; padding-top: 28px; margin-top: 32px; }
 
-  .timeline-item { grid-template-columns: 60px 22px 1fr; gap: 0 10px; }
-  .timeline-side  { padding-top: 22px; }
-  .timeline-year  { font-size: 0.68rem; }
-  .timeline-card  { padding: 20px; }
-  .timeline-card-header { flex-direction: column; gap: 10px; }
+  /* Skills */
+  .categorias-grid { grid-template-columns: 1fr; }
+  .progress-bar    { width: 52px; }
 
-  .contact-map iframe { height: 240px; }
+  /* Education */
+  .edu-card        { flex-direction: column; gap: 16px; padding: 20px; }
+  .edu-card-header { flex-direction: column; gap: 8px; }
+  .edu-meta-tags   { flex-wrap: wrap; gap: 8px; }
+  .langs-wrapper   { padding: 20px; }
+  .lang-card       { min-width: 100%; }
 
-  .footer-inner { flex-direction: column; align-items: center; gap: 16px; }
-  .site-footer  { padding: 32px 20px; }
+  /* Timeline: ocultar columna año y mostrar dentro de la card */
+  .timeline        { padding-left: 0; }
+  .timeline-item   { grid-template-columns: 0px 18px 1fr; gap: 0 10px; }
+  .timeline-side   { display: none; }
+  .timeline-role::after {
+    content: attr(data-period);
+    display: none; /* controlado por JS si se quiere */
+  }
+  /* Mostrar el año dentro del badge de periodo (ya existe en HTML) */
+  .timeline-card           { padding: 18px; }
+  .timeline-card-header    { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .timeline-period         { align-self: flex-start; }
+  .tech-tags span          { font-size: 0.7rem; padding: 3px 9px; }
+
+  /* Contact */
+  .contact-map iframe      { height: 220px; }
+  .contact-card            { padding: 14px 16px; gap: 12px; }
+  .contact-card-icon       { width: 38px; height: 38px; font-size: 0.95rem; }
+  .contact-card-value      { font-size: 0.82rem; }
+
+  /* Footer */
+  .footer-inner  { flex-direction: column; align-items: center; gap: 16px; }
+  .site-footer   { padding: 28px 18px; }
+
+  /* Back to top */
+  .back-to-top   { bottom: 16px; right: 16px; width: 42px; height: 42px; font-size: 0.85rem; }
 }
 
-/* ---- 400px ---- */
-@media (max-width: 400px) {
-  .hero-name { font-size: 2rem; }
-  .hero-role { font-size: 0.9rem; }
-  .btn-primary, .btn-outline { padding: 12px 22px; font-size: 0.85rem; }
+/* ---- 480px — Small phones ---- */
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar { padding: 0 14px; }
+  .nav-logo { font-size: 1.35rem; }
+
+  /* Hero */
+  .section-inicio { padding: 86px 14px 50px; }
+  .hero-available  { font-size: 0.72rem; padding: 5px 12px; gap: 7px; }
+  .available-dot   { width: 7px; height: 7px; }
+  .hero-greeting   { font-size: 0.76rem; letter-spacing: 0.1em; }
+  .hero-name       { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .hero-role       { font-size: 0.88rem; }
+  .hero-desc       { font-size: 0.9rem; }
+
+  /* About stats */
+  .stat-number  { font-size: 2rem; }
+  .stat-suffix  { font-size: 1.6rem; }
+  .stat-label   { font-size: 0.75rem; }
+
+  /* Section titles */
+  .section-title { font-size: 1.7rem; }
+
+  /* Timeline */
+  .timeline-role    { font-size: 0.95rem; }
+  .timeline-company { font-size: 0.82rem; }
+  .timeline-desc    { font-size: 0.85rem; }
+
+  /* Education */
+  .edu-degree     { font-size: 0.98rem; }
+  .edu-desc       { font-size: 0.85rem; }
+}
+
+/* ---- 380px — Very small phones ---- */
+@media (max-width: 380px) {
+  .hero-name { font-size: 1.75rem; }
+  .btn-primary,
+  .btn-outline   { font-size: 0.82rem; padding: 12px 18px; }
+  .section-title { font-size: 1.55rem; }
+  .stats-row     { gap: 16px; }
+  .stat-number   { font-size: 1.7rem; }
+  .stat-suffix   { font-size: 1.3rem; }
 }

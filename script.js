@@ -234,11 +234,13 @@ progressDivs.forEach(bar => {
 /* ---- SMOOTH SCROLL for anchor links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const href = anchor.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      const offset = 70; // navbar height
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const navH = navbar.offsetHeight || NAVBAR_H;
+      const top  = target.getBoundingClientRect().top + window.scrollY - navH;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   });
